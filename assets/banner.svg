@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280">
+  <defs><linearGradient id="bg"><stop stop-color="#091427"/><stop offset="1" stop-color="#234882"/></linearGradient></defs>
+  <rect width="960" height="280" rx="24" fill="url(#bg)"/>
+  <path d="M0 248C232 248 264 100 493 127S721 153 960 28v45C775 199 682 207 489 173S221 272 0 280Z" fill="#79a7ff" opacity=".23"/>
+  <path d="M0 272C207 280 322 151 498 171S751 182 960 69" fill="none" stroke="#8ec5ff" opacity=".42" stroke-width="2"/>
+  <g transform="translate(48 49)" fill="none" stroke="#78ebd3" stroke-width="3"><path d="M27 0l25 14v28L27 56 2 42V14zM2 14l25 14 25-14M27 28v28"/></g>
+  <text x="122" y="92" font-family="system-ui,sans-serif" font-size="20" letter-spacing="4" fill="#78ebd3">AETHER / ОБТ</text>
+  <text x="48" y="179" font-family="system-ui,sans-serif" font-size="68" font-weight="700" fill="#f1f6ff">Омчанка</text>
+  <text x="52" y="229" font-family="system-ui,sans-serif" font-size="24" fill="#c1d4ee">Панель ключей и сервер Aether</text>
+</svg>

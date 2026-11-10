@@ -1,0 +1,43 @@
+name: Publish Aether open beta
+
+on:
+  schedule:
+    - cron: '11,21,41 8 11 11 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-aether-open-beta
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: v0.1.0-beta.1
+    steps:
+      - name: Publish the prepared release
+        shell: bash
+        run: |
+          set -euo pipefail
+          now=$(date -u +%s)
+          start=$(date -u -d '2026-11-11 08:11:00' +%s)
+          end=$(date -u -d '2026-11-12 00:00:00' +%s)
+          if (( now < start || now >= end )); then
+            echo 'Outside the publication window.'
+            exit 0
+          fi
+          draft=$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)
+          if [[ $draft != true ]]; then
+            echo 'Release is already published.'
+            exit 0
+          fi
+          assets=$(gh release view "$RELEASE_TAG" --json assets --jq '.assets[].name')
+          for required in install-omchanka-ubuntu.sh omchanka-0.1.1.1-b-source.zip Aether-Windows-0.0.9.10-b.zip SHA256SUMS.txt; do
+            grep -Fxq "$required" <<< "$assets" || { echo "Missing asset: $required"; exit 1; }
+          done
+          gh release edit "$RELEASE_TAG" --draft=false --prerelease
