@@ -1,20 +1,20 @@
 ![Омчанка · Aether ОБТ](assets/banner.svg)
 
-# Aether и Омчанка · открытая бета
+# Aether и Омчанка · 0.1.1 (бета)
 
 | Что нужно | Скачать |
 |---|---|
-| Android ARM64 · 0.1.0-profiles | [APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/Aether-Android-arm64.apk) |
-| Windows x64 · 0.0.9.14 (b) | [Переносимый ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/Aether-Windows-x64.zip) |
-| Исходники панели и клиентов | [Исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/omchanka-source.zip) |
-| Проверка файлов | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/SHA256SUMS.txt) |
+| Android ARM64 · 0.1.1 | [APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/Aether-Android-arm64.apk) |
+| Windows x64 · 0.1.1 | [Переносимый ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/Aether-Windows-x64.zip) |
+| Исходники панели и клиентов | [Исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/omchanka-source.zip) |
+| Проверка файлов | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/SHA256SUMS.txt) |
 
 ## Панель одной командой
 
 На Ubuntu / Debian выполните от root:
 
 ```bash
-bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/install-omchanka-ubuntu.sh)
+bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/install-omchanka-ubuntu.sh)
 ```
 
 На новом сервере установщик подготовит зависимости и запросит параметры панели.
@@ -23,6 +23,10 @@ bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/dow
 сохраняются. Сборка занимает несколько минут; перезапуск прерывает соединения Aether.
 
 ## Что добавлено
+
+Android получил значок Aether с поддержкой круглых и тематических иконок.
+Windows и Android используют единый номер **0.1.1**.
+
 
 - **Серверы в клиентах:** до 32 сохранённых ключей, выбор, проверка TCP/TLS/доступа,
   последняя задержка, удаление из списка. Android Keystore и Windows DPAPI защищают
