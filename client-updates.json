@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "android": {
+    "version_code": 16,
+    "version": "0.1.1",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/Aether-Android-arm64.apk",
+    "notes": "Значок Aether для Android, круглые и тематические иконки. Список серверов, QR-импорт, приложения напрямую и восстановление связи сохранены.",
+    "sha256": "69031cc055086c34e832cf2ca796fda3f0d74dc115d0b5895a8db398bfc026e2"
+  },
+  "windows": {
+    "build": 15,
+    "version": "0.1.1",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/Aether-Windows-x64.zip",
+    "notes": "Единый номер 0.1.1. Исправлена высота окна для кнопок «Серверы» и «Обновления». Постоянный канал проверки обновлений.",
+    "sha256": "a238768018a8c214a991e02a3d52b2057adb003ced0d808780fb7c37c773095d"
+  },
+  "panel": {
+    "version": "0.1.1.2 (B)",
+    "notes": "QR ключей, сроки действия и квоты трафика; без изменений серверной логики относительно предыдущей сборки."
+  }
+}
