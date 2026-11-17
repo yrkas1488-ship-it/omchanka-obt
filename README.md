@@ -6,8 +6,8 @@
 
 | Что нужно | Файл |
 |---|---|
-| Android ARM64 · проверка ключа, маршрутизация, журнал, маскоты | [Скачать APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/Aether-Android-key-check-arm64.apk) |
-| Windows x64 · переносимый клиент 0.0.9.12 (b) | [Скачать ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/Aether-Windows-key-check.zip) |
+| Android ARM64 · проверка ключа, маршрутизация, журнал, маскоты | [Скачать APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/Aether-Android-arm64.apk) |
+| Windows x64 · переносимый клиент 0.0.9.13 (b) | [Скачать ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/Aether-Windows-x64.zip) |
 | Панель на VPS · установка или обновление | `install-omchanka-ubuntu.sh` — команда ниже |
 | Исходники панели, включая копирование существующих ключей | [Скачать исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/omchanka-source.zip) |
 | Контрольные суммы | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.0-beta.1/SHA256SUMS.txt) |
@@ -31,6 +31,19 @@ bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/dow
 **Android:** установите APK; при обновлении — поверх текущего приложения.
 **Windows:** распакуйте ZIP и запустите `Aether.exe`.
 В обоих клиентах импортируйте свою ссылку из панели. Ссылку храните как пароль.
+
+## Проверка связи и восстановление
+
+Клиенты проверяют TCP, TLS и ответ Aether-сервера каждые 30 секунд.
+После двух неудачных проверок подряд показывается «Связь потеряна».
+Повторы идут с паузами до 60 секунд; отключение пользователем отменяет их.
+При завершении ядра клиент пытается восстановить его. Android сохраняет TUN
+между попытками; Windows сохраняет включённый kill switch.
+Проверка доступности сервера не гарантирует доступность каждого сайта.
+На Windows мониторинг сервера требует импортированного `aether://` ключа.
+
+Сборки прошли компиляцию, проверку подписи APK и локальные тесты.
+Проверка аварийного обрыва и отмены на реальных устройствах ещё предстоит.
 
 ## Статус беты
 
