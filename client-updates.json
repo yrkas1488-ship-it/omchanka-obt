@@ -1,18 +1,18 @@
 {
   "schema": 1,
   "android": {
-    "version_code": 17,
-    "version": "0.1.1",
-    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/Aether-Android-arm64.apk",
-    "notes": "Исправлена кнопка «Приложения напрямую»: список открывается и при включённом VPN. Выбор применяется после переподключения. Добавлены подтверждение сохранения и диагностика списка.",
-    "sha256": "5e7776a6427279117ae982e839331537e888db4cc3258654d7da52666008d603"
+    "version_code": 18,
+    "version": "0.1.1.1",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.1/Aether-Android-arm64.apk",
+    "notes": "Выборочная защита от скриншотов: при вводе ключа и пока ссылка остаётся в поле. После сохранения или очистки снимки разрешены. Добавлена кнопка очистки поля.",
+    "sha256": "09bc1e729c078f42f1e6c4eb6473cbc6da34afaa6733891ceae688da9772d32f"
   },
   "windows": {
-    "build": 15,
-    "version": "0.1.1",
-    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1/Aether-Windows-x64.zip",
-    "notes": "Единый номер 0.1.1. Исправлена высота окна для кнопок «Серверы» и «Обновления». Постоянный канал проверки обновлений.",
-    "sha256": "a238768018a8c214a991e02a3d52b2057adb003ced0d808780fb7c37c773095d"
+    "build": 16,
+    "version": "0.1.1.1",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.1/Aether-Windows-x64.zip",
+    "notes": "Номер версии приведён к 0.1.1.1. Функции Windows без изменений.",
+    "sha256": "b26f04d8d0cdfae2448a1ac328b6b9c00e107b14ba39980ddb6b738c60ff3af6"
   },
   "panel": {
     "version": "0.1.1.2 (B)",
