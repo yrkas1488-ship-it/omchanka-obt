@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "android": {
-    "version_code": 18,
-    "version": "0.1.1.1",
-    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.1/Aether-Android-arm64.apk",
-    "notes": "Выборочная защита от скриншотов: при вводе ключа и пока ссылка остаётся в поле. После сохранения или очистки снимки разрешены. Добавлена кнопка очистки поля.",
-    "sha256": "09bc1e729c078f42f1e6c4eb6473cbc6da34afaa6733891ceae688da9772d32f"
+    "version_code": 19,
+    "version": "0.1.1.2",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/Aether-Android-arm64.apk",
+    "notes": "Перезапуск живого ядра после трёх подряд неудачных проверок. Пауза между такими перезапусками не менее минуты. TUN сохраняется. В отчёте — счётчики TLS.",
+    "sha256": "c4174cdd89d76cf61a7e23004afc6123795758e9e3d23d96ef3250e5461dd6d1"
   },
   "windows": {
-    "build": 16,
-    "version": "0.1.1.1",
-    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.1/Aether-Windows-x64.zip",
-    "notes": "Номер версии приведён к 0.1.1.1. Функции Windows без изменений.",
-    "sha256": "b26f04d8d0cdfae2448a1ac328b6b9c00e107b14ba39980ddb6b738c60ff3af6"
+    "build": 17,
+    "version": "0.1.1.2",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/Aether-Windows-x64.zip",
+    "notes": "Перезапуск движка после трёх неудачных проверок с сохранением включённого kill switch. Минутная пауза, расширенная диагностика TLS.",
+    "sha256": "d90d4be1fc40178cad9b684dc0574d27b806b94b7c34b843096e711f5915423f"
   },
   "panel": {
-    "version": "0.1.1.2 (B)",
-    "notes": "QR ключей, сроки действия и квоты трафика; без изменений серверной логики относительно предыдущей сборки."
+    "version": "0.1.1.2",
+    "notes": "Диагностика TLS: принятые/отправленные байты, время handshake, активные соединения, pending TLS и заполнение лимита. Нужна отдельная установка обновления на VPS."
   }
 }
