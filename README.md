@@ -1,20 +1,20 @@
 ![Омчанка · Aether ОБТ](assets/banner.svg)
 
-# Aether и Омчанка · 0.1.1.2 (бета)
+# Aether и Омчанка · 0.1.1.3 (бета)
 
 | Что нужно | Скачать |
 |---|---|
-| Android ARM64 · 0.1.1.2 | [APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/Aether-Android-arm64.apk) |
-| Windows x64 · 0.1.1.2 | [Переносимый ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/Aether-Windows-x64.zip) |
-| Исходники панели и клиентов | [Исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/omchanka-source.zip) |
-| Проверка файлов | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/SHA256SUMS.txt) |
+| Android ARM64 · 0.1.1.3 | [APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/Aether-Android-arm64.apk) |
+| Windows x64 · 0.1.1.3 | [Переносимый ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/Aether-Windows-x64.zip) |
+| Исходники панели и клиентов | [Исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/omchanka-source.zip) |
+| Проверка файлов | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/SHA256SUMS.txt) |
 
 ## Панель одной командой
 
 На Ubuntu / Debian выполните от root:
 
 ```bash
-bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.2/install-omchanka-ubuntu.sh)
+bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/install-omchanka-ubuntu.sh)
 ```
 
 На новом сервере установщик подготовит зависимости и запросит параметры панели.
@@ -23,6 +23,10 @@ bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/dow
 сохраняются. Сборка занимает несколько минут; перезапуск прерывает соединения Aether.
 
 ## Что добавлено
+
+**0.1.1.3:** добавление свободных TCP-портов Aether из веб-панели без отключения действующих соединений; сохранение портов между перезапусками. Android направляет DNS резервного перехода IPv6 → IPv4 внутри туннеля. Для новых портов обновите VPS. Внешний firewall настраивается отдельно.
+
+
 
 **0.1.1.2:** после трёх неудачных проверок клиенты действительно перезапускают живое ядро, с ограничением раз в минуту. Android сохраняет TUN, Windows — включённый kill switch. Ручное отключение отменяет повторы. Клиент и обновлённая панель пишут счётчики TLS без содержимого пакетов; для серверной диагностики отдельно обновите VPS. Это не доказанное устранение первопричины сетевых таймаутов.
 
@@ -33,7 +37,7 @@ bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/dow
 
 
 Android получил значок Aether с поддержкой круглых и тематических иконок.
-Windows и Android используют единый номер **0.1.1.2**.
+Windows и Android используют единый номер **0.1.1.3**.
 
 
 - **Серверы в клиентах:** до 32 сохранённых ключей, выбор, проверка TCP/TLS/доступа,
