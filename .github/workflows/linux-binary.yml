@@ -4,7 +4,7 @@ on:
     inputs:
       tag:
         required: true
-        default: v0.1.1.4
+        default: v0.1.1.5
         type: string
 permissions:
   contents: write
@@ -32,6 +32,8 @@ jobs:
           gh release download "$TAG" -R "$REPO" -p omchanka-source.zip
           unzip -q omchanka-source.zip -d source
           if find source/deploy -name '*.sh' -exec grep -l $'\r' {} + | grep .; then exit 1; fi
+      - name: Check checksum manifest formats
+        run: bash source/deploy/test-checksum-format.sh
       - name: Toolchain
         run: |
           sudo apt-get update -qq
