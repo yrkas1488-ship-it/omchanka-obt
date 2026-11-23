@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "android": {
-    "version_code": 20,
-    "version": "0.1.1.3",
-    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/Aether-Android-arm64.apk",
-    "notes": "DNS при резервном переходе IPv6 → IPv4 проходит внутри Aether.",
-    "sha256": "985e862e948e1919219def236fd10c7bca6c6c2cae0128761486a74c61c7aa11"
+    "version_code": 21,
+    "version": "0.1.1.6",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/Aether-Android-arm64.apk",
+    "notes": "Текущая скорость скачивания/отдачи и расход трафика за сеанс. Прямые маршруты и TLS-паддинг не учитываются.",
+    "sha256": "c2f104ebb1d5e3b151d601627e81f7e3bca691ad9883b1f4f006652e37e3bbe2"
   },
   "windows": {
-    "build": 18,
-    "version": "0.1.1.3",
-    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/Aether-Windows-x64.zip",
-    "notes": "Версия 0.1.1.3, совместимая с обновлённой панелью и дополнительными портами.",
-    "sha256": "1424864c6970af328102d8c90a95234dda04585383ba245c15e4aacba6d58bc3"
+    "build": 19,
+    "version": "0.1.1.6",
+    "url": "https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/Aether-Windows-x64.zip",
+    "notes": "Текущая скорость скачивания/отдачи и расход трафика за сеанс. Прямые маршруты и TLS-паддинг не учитываются.",
+    "sha256": "00778dac9bfd46c8e68053d97b004b80d26004a7ccf4e96e4502fd9ff275f291"
   },
   "panel": {
-    "version": "0.1.1.5",
-    "notes": "Обновление без Rust, блокировка параллельных запусков, проверка версии, резервная копия и откат. Повтор той же сборки без перезапуска."
+    "version": "0.1.1.6",
+    "notes": "Активные соединения и текущий расход по ключу, последний IP и время успешного подключения; автообновление списка."
   }
 }
