@@ -20,17 +20,17 @@ bash <(curl -fsSL https://raw.githubusercontent.com/yrkas1488-ship-it/omchanka-o
 
 | Что нужно | Скачать |
 |---|---|
-| Android ARM64 · 0.1.1.3 | [APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/Aether-Android-arm64.apk) |
-| Windows x64 · 0.1.1.3 | [Переносимый ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/Aether-Windows-x64.zip) |
-| Исходники панели и клиентов | [Исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/omchanka-source.zip) |
-| Проверка файлов | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/SHA256SUMS.txt) |
+| Android ARM64 · 0.1.1.6 | [APK](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/Aether-Android-arm64.apk) |
+| Windows x64 · 0.1.1.6 | [Переносимый ZIP](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/Aether-Windows-x64.zip) |
+| Исходники панели и клиентов | [Исходники](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/omchanka-source.zip) |
+| Проверка файлов | [SHA256SUMS.txt](https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/SHA256SUMS.txt) |
 
 ## Панель одной командой
 
 На Ubuntu / Debian выполните от root:
 
 ```bash
-bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.3/install-omchanka-ubuntu.sh)
+bash <(curl -fsSL https://github.com/yrkas1488-ship-it/omchanka-obt/releases/download/v0.1.1.6/install-omchanka-ubuntu.sh)
 ```
 
 На новом сервере установщик подготовит зависимости и запросит параметры панели.
