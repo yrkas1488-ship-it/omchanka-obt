@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-VERSION=v0.1.1.4
+VERSION=v0.1.1.5
 REPO=yrkas1488-ship-it/omchanka-obt
 die() { printf '%s\n' "$*" >&2; exit 1; }
 [[ $EUID == 0 ]] || die 'Запусти команду от root.'
