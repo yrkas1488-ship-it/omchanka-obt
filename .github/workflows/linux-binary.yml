@@ -1,0 +1,64 @@
+name: Build and test Linux panel
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        required: true
+        default: v0.1.1.4
+        type: string
+permissions:
+  contents: write
+jobs:
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: amd64
+            target: x86_64-unknown-linux-musl
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+            target: aarch64-unknown-linux-musl
+    runs-on: ${{ matrix.runner }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      TAG: ${{ inputs.tag }}
+    steps:
+      - name: Download reviewed release source
+        run: |
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          gh release download "$TAG" -R "$REPO" -p omchanka-source.zip
+          unzip -q omchanka-source.zip -d source
+          if find source/deploy -name '*.sh' -exec grep -l $'\r' {} + | grep .; then exit 1; fi
+      - name: Toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y musl-tools
+          rustup update stable --no-self-update
+          rustup default stable
+          rustup target add ${{ matrix.target }}
+      - name: Test native Linux binaries and authentication
+        working-directory: source
+        run: cargo test --locked --lib --bin omchanka --test integration
+      - name: Build static release
+        working-directory: source
+        env:
+          CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER: musl-gcc
+          CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER: musl-gcc
+          CC: musl-gcc
+          RUSTFLAGS: --remap-path-prefix=${{ github.workspace }}=/build
+        run: cargo build --locked --release --target ${{ matrix.target }} --bin omchanka --bin init-tls
+      - name: Test isolated installation and rollback
+        run: |
+          mkdir bundle
+          cp source/target/${{ matrix.target }}/release/{omchanka,init-tls} bundle/
+          cp source/deploy/install-binary.sh bundle/install.sh
+          cp source/deploy/omchanka-menu.sh bundle/
+          sudo python3 source/deploy/test-binary-installer.py bundle
+      - name: Package static Linux build
+        run: |
+          tar -czf omchanka-linux-${{ matrix.arch }}.tar.gz --mode='u+rwX,go+rX' -C bundle omchanka init-tls install.sh omchanka-menu.sh
+          sha256sum omchanka-linux-${{ matrix.arch }}.tar.gz > linux-${{ matrix.arch }}-SHA256SUMS.txt
+          gh release upload "$TAG" -R "$REPO" omchanka-linux-${{ matrix.arch }}.tar.gz linux-${{ matrix.arch }}-SHA256SUMS.txt --clobber
