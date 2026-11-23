@@ -22,6 +22,8 @@ base="https://github.com/$REPO/releases/download/$VERSION"
 echo "Скачиваем Омчанку $VERSION ($arch), без сборки Rust на сервере…"
 curl -fL --retry 3 --connect-timeout 15 "$base/$asset" -o "$scratch/$asset"
 curl -fL --retry 3 --connect-timeout 15 "$base/SHA256SUMS.txt" -o "$scratch/SHA256SUMS.txt"
+# Accept checksum files produced on either Linux or Windows.
+sed -i 's/\r$//' "$scratch/SHA256SUMS.txt"
 expected=$(awk -v file="$asset" '$2 == file {print $1}' "$scratch/SHA256SUMS.txt")
 [[ $expected =~ ^[0-9a-f]{64}$ ]] || die 'Не найдена контрольная сумма сборки.'
 printf '%s  %s\n' "$expected" "$scratch/$asset" | sha256sum -c -
